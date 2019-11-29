@@ -12,7 +12,7 @@ public class IsometricPlayerMovementController : MonoBehaviour,IInteractionHandl
     Rigidbody2D rbody;
     Vector2 moveVec;
     float angle;
-    Vector2  direction = new Vector2 (0,-1);
+    
     [SerializeField ]
     GameObject attackZone;
     
@@ -39,9 +39,13 @@ public class IsometricPlayerMovementController : MonoBehaviour,IInteractionHandl
     {
         moveVec = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
        Movement();
-       InputCheck();
        
        
+       
+    }
+    private void Update()
+    {
+        InputCheck();
     }
 
     public void Interact(IInteractionHandler whoInteracts)
@@ -104,7 +108,7 @@ public class IsometricPlayerMovementController : MonoBehaviour,IInteractionHandl
           {
               Vector2 dir = moveVec * movementSpeed;
               Vector2 normDir = dir.normalized;
-              float angle = Vector2.SignedAngle(Vector2.up, normDir);
+              angle = Vector2.SignedAngle(Vector2.up, normDir);
               attackZone.transform.rotation = Quaternion.Euler(0,0,angle);
              
           }

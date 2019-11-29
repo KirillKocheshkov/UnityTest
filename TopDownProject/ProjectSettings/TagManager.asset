@@ -48,6 +48,9 @@ TagManager:
   - name: ItemsToInteract
     uniqueID: 667512365
     locked: 0
+  - name: Collision
+    uniqueID: 4048366915
+    locked: 0
   - name: PlayerLevel
     uniqueID: 1927385393
     locked: 0

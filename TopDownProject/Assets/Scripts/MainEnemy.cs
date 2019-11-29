@@ -5,8 +5,7 @@ using UnityEngine;
 public abstract class  MainEnemy : MonoBehaviour,IInteractionHandler
 
 {
-    public float healthMax;
-    float healthCurrent;
+   
     bool isDead;
 
     
